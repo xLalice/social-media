@@ -1,0 +1,22 @@
+{
+  "name": "social-media",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "npm --workspace apps/client run dev",
+    "dev:server": "npm --workspace apps/server run dev",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "prisma"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
