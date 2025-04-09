@@ -10,7 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -18,5 +17,15 @@
   ],
   "devDependencies": {
     "concurrently": "^9.1.2"
-  }
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "@types/express": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "description": ""
 }
