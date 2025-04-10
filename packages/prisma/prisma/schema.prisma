@@ -23,7 +23,6 @@ model User {
   followers     Follow[]  @relation("following")
   following     Follow[]  @relation("follower")
 
-  
   refreshTokens RefreshToken[]
 
   @@map("users")

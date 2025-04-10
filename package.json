@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev:client": "npm --workspace apps/client run dev",
-    "dev:server": "npm --workspace apps/server run dev",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md}\""
   },
   "keywords": [],
   "author": "",
@@ -13,19 +15,19 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "prisma"
+    "packages/*"
   ],
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "prisma": "^6.6.0"
   },
   "dependencies": {
-    "@prisma/client": "^6.6.0",
-    "@types/express": "^5.0.1",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
+    "@types/node": "^22.14.0",
     "passport": "^0.7.0",
-    "passport-github2": "^0.1.12",
-    "passport-google-oauth20": "^2.0.0"
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.3"
   },
+  "packageManager": "npm@10.9.2",
   "description": ""
 }
