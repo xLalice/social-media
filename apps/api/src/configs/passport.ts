@@ -1,8 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Strategy as GitHubStrategy } from "passport-github2";
-import { PrismaClient } from "@prisma/client";
-import { IUser } from "@/interfaces/user.interface";
+import { PrismaClient, User } from "@prisma/client";
 import { Profile as GitHubProfile } from "passport-github2";
 import { VerifyCallback } from "passport-google-oauth20";
 
@@ -114,7 +113,7 @@ passport.use(new GitHubStrategy({
 ));
 
 passport.serializeUser((user, done) => {
-    done(null, (user as IUser).id);
+    done(null, (user as User).id);
 })
 
 passport.deserializeUser(async (id: string | undefined, done) => {
