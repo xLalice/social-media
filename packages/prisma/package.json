@@ -1,7 +1,7 @@
 {
-  "name": "@social-media/prisma",
+  "name": "@packages/prisma",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "migrate:dev": "prisma migrate dev"
   },
@@ -12,5 +12,10 @@
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "prisma": "^6.6.0"
+  },
+  "types": "index.d.ts",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./prisma/generated/index.js"
   }
 }

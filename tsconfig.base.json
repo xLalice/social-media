@@ -2,22 +2,22 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2022", 
+    "target": "ES2022",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    "isolatedModules": true, 
+    "isolatedModules": true,
 
     "strict": true,
-    "noUncheckedIndexedAccess": true, 
+    "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
 
-    "module": "ESNext", 
+    "module": "ESNext",
     "moduleResolution": "Bundler",
-    "baseUrl": ".", 
+    "baseUrl": ".",
     "paths": {
-      "@packages/prisma": ["packages/prisma"],
-      "@packages/prisma/client": ["packages/prisma/generated/client"]
+      "@packages/prisma": ["packages/prisma/src"],
+      "@packages/prisma/client": ["packages/prisma/prisma/generated"]
     }
-  },
+  }
 }
