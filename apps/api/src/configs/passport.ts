@@ -8,10 +8,21 @@ import { VerifyCallback } from "passport-google-oauth20";
 
 const prisma = new PrismaClient();
 
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
+    throw new Error("Google Client ID and Secret must be provided");
+}
+if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
+    throw new Error("GitHub Client ID and Secret must be provided");
+}
+
 // ------- Google Strategy --------
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID as string,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: `${process.env.APP_URL}/api/auth/google/callback`,
     scope: ['profile', 'email'],
   },
@@ -56,8 +67,8 @@ passport.use(new GoogleStrategy({
 
 // ------- GitHub Strategy --------
 passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID as string,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
     callbackURL: `${process.env.APP_URL}/api/auth/github/callback`,
     scope: ["user:email"]
   },
