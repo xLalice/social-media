@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@packages/prisma": "*",
+    "@tanstack/react-query": "^5.72.2",
+    "axios": "^1.8.4",
+    "jwt-decode": "^4.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
