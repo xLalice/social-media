@@ -22,6 +22,7 @@
     "prisma": "^6.6.0"
   },
   "dependencies": {
+    "@tanstack/react-query-devtools": "^5.72.2",
     "@types/node": "^22.14.0",
     "passport": "^0.7.0",
     "prettier": "^3.5.3",
