@@ -1,4 +1,4 @@
-import { PrismaClient, User } from "@prisma/client";
+import { PrismaClient, User } from "@packages/prisma";
 import { Request, Response } from "express";
 import {
   generateTokens,

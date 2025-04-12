@@ -3,7 +3,7 @@ import { persist, devtools } from "zustand/middleware";
 import axios from "axios";
 import { User } from "@packages/prisma";
 
-const VITE_API_URL = process.env.VITE_API_URL || "http://localhost:3000";
+const VITE_API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 interface AuthState {
   user: User | null;

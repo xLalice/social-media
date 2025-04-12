@@ -1,4 +1,3 @@
-// src/pages/LoginPage.tsx
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/authStore';
@@ -8,7 +7,6 @@ const LoginPage: React.FC = () => {
   const { loginWithGoogle, loginWithGithub, error } = useAuthStore();
   const { isAuthenticated, isLoading } = useUser();
   
-  // Redirect if already logged in
   if (isAuthenticated && !isLoading) {
     return <Navigate to="/" replace />;
   }

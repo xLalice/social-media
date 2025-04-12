@@ -1,8 +1,10 @@
 import app from "./app";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@packages/prisma";
+import { setupEnv } from './utils/env';
+setupEnv();
 
 const prisma = new PrismaClient();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 async function startServer() {
   try {

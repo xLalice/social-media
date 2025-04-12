@@ -1,5 +1,5 @@
 import { AuthTokens, JwtPayload } from "@/interfaces/user.interface";
-import { PrismaClient, User } from "@prisma/client";
+import { PrismaClient, User } from "@packages/prisma";
 import jwt, { Secret } from "jsonwebtoken";
 
 const prisma = new PrismaClient();
